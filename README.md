@@ -1,5 +1,76 @@
 # Compromised-Windows-Machine
 
-This is a controlled simulation, not a real compromise.
-My goal with this project was to understand how changes in a system leave evidence and trails and
-how to piece together said evidence in order to construct what is going on.
+# Windows Host Investigation Lab
+
+## Overview
+
+This project documents a hands-on investigation of a Windows 11 virtual machine using built-in Windows tools and PowerShell.
+
+The objective was to establish a baseline of the system, examine key areas of activity, and practice identifying and investigating potentially suspicious indicators.
+
+A controlled test scenario will be used to explore how system changes can be reflected in Windows event logs.
+
+## Objectives
+
+- Enumerate local user accounts and groups.
+- Inspect running processes and Windows services.
+- Examine network configuration and TCP connections.
+- Explore Windows Event Logs.
+- Review startup applications and potential persistence locations.
+- Investigate unfamiliar executable files.
+- Construct a timeline from observed evidence.
+
+## Environment
+
+- Operating system: Windows 11 VM
+- Tools: PowerShell, Windows Event Viewer, built-in Windows utilities
+- Environment: Personal virtual machine used for learning and testing
+
+## Investigation Methodology
+
+The investigation began with a baseline review of user accounts, processes, services, network activity, event logs, startup entries, and executable files.
+
+PowerShell command discovery was also used to identify relevant commands and explore the available system information.
+
+## Initial Findings
+
+### Users and Groups
+Documented local accounts and their enabled/disabled status.
+
+### Processes and Services
+Recorded process and service counts and began examining system activity.
+
+### Network
+Inspected the network profile, connectivity status, and active TCP connections.
+
+### Event Logs
+Identified available event logs and recorded entry counts.
+
+### Startup and Persistence
+Reviewed startup commands, registry Run entries, and scheduled tasks.
+
+### File Investigation
+Investigated an executable with an unexpected signature-check result. Further validation is required before drawing a conclusion about its legitimacy.
+
+## Timeline
+
+To be completed after examining relevant event logs and conducting a controlled test scenario.
+
+## Limitations
+
+The initial investigation was performed on a personal Windows VM. A baseline review alone cannot establish whether a system is compromised. Process counts, unfamiliar filenames, and signature-check errors are not sufficient proof of malicious activity.
+
+## Lessons Learned
+
+To be completed as the investigation progresses.
+
+## Evidence
+
+Screenshots and detailed investigation notes are stored in this repository.
+
+## Next Steps
+
+- Investigate selected processes, services, and event-log entries in greater depth.
+- Correlate observed activity with supporting evidence.
+- Conduct a controlled test scenario.
+- Build a timeline and document the final findings.
