@@ -21,7 +21,7 @@ Event #2: Local accounts enumerated
 <br>
    Date and Time: Time not recorded
    <br>
-   Evidence: Screenshot: [![User enumeration](screenshots/01-Local accounts enumerated.png)]
+   Evidence: Screenshot: User enumeration
    <br>
    Interpretation: Recorded the existing accounts and their status
 
