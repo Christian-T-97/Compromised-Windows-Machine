@@ -62,6 +62,8 @@ The initial investigation was performed on a personal Windows VM. A baseline rev
 
 ## Lessons Learned
 * Certain processes or executables may show a strange error while checking validity, this does not mean it is automatically malicious, you need to look at context and certain details such as location, CA, path, and provide overall deeper investigation to confirm its level of concern if any.
+* Understanding how to move across a machine using various commands is essential in conducting a deep investigation.
+* It is best to have an explorative curious mindset when doing certain projects, following the thread of curiosity can lead to a higher level of competence.
 
 ## Evidence
 
