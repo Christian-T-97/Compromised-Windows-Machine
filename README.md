@@ -1,5 +1,5 @@
 
-# Windows Host Investigation Lab
+# Windows Host Security Investigation Lab
 
 ## Overview
 
