@@ -1,4 +1,3 @@
-# Compromised-Windows-Machine
 
 # Windows Host Investigation Lab
 
