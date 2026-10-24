@@ -50,27 +50,21 @@ Identified available event logs and recorded entry counts.
 Reviewed startup commands, registry Run entries, and scheduled tasks.
 
 ### File Investigation
-Investigated an executable with an unexpected signature-check result. Further validation is required before drawing a conclusion about its legitimacy.
+Investigated an executable with an unexpected signature-check result. Further validation was required before drawing a conclusion about its legitimacy.
 
 ## Timeline
 
-To be completed after examining relevant event logs and conducting a controlled test scenario.
+Timeline of these events and their relevant evidence including screenshots, paths, commands used.
 
 ## Limitations
 
 The initial investigation was performed on a personal Windows VM. A baseline review alone cannot establish whether a system is compromised. Process counts, unfamiliar filenames, and signature-check errors are not sufficient proof of malicious activity.
 
 ## Lessons Learned
-
-To be completed as the investigation progresses.
+* Certain processes or executables may show a strange error while checking validity, this does not mean it is automatically malicious, you need to look at context and certain details such as location, CA, path, and provide overall deeper investigation to confirm its level of concern if any.
 
 ## Evidence
 
 Screenshots and detailed investigation notes are stored in this repository.
 
-## Next Steps
 
-- Investigate selected processes, services, and event-log entries in greater depth.
-- Correlate observed activity with supporting evidence.
-- Conduct a controlled test scenario.
-- Build a timeline and document the final findings.
