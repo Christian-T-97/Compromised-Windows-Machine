@@ -32,3 +32,23 @@
 * Commands used: Get-EventLog, GetEventLog-List, Get-WinEvent -LogName Security -MaxEvents 20 | Select-Object TimeCreated, ID, ProviderName, Message
 
 
+Startup/Persistence locations: 
+* Startup names: OneDriveSetup, OneDrive, MicrosoftEdgeAutolLaunch, SecurityHealth
+* Persistence Locations:  All legit; no suspicious persistence locations found.
+* Commands used to investigate startup and persistence locations:  Get-CimInstance Win32_StartupCommand | Select-Object Name, Command, Location, User; Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Run; Get-ScheduledTask | Where-Object {$_.TaskPath -notlike "\Microsoft*"}
+
+------
+
+Suspicious Files: 
+In order to search for any suspicious files, i used a specially crafted command to output any anomolies; upon reading the output i noticed ‘blnsvr.exe’,  i then checked if its signature was valid to which the status was ‘Unkownerror’, in order to finally verify what this file could have been i used a final command to verify its full path and the output seemed to connect to the fact that i am using a VM and this is a common service intended for that.
+
+File investigated: ‘blnsvr’
+* Full path: c”\program files (x86)\UTM guest tools\drivers\balloon\w11\amr64\balnsvr.exe’
+* Signature status\message: UnknownError, ‘A certificate chain processed, but terminated in a root certificate, which is not trusted by the trust provider.’
+* Issuer: CN=Red Hat Inc, OU=Dev, O=virtio-win
+* What was found: I found this file is likely related to the Windows VM that I am running this on, and its lack of validity is due to the issuer being Red Hat, which is not included in Microsoft’s standard trusted root certification authorities store, resulting in the UnknownError message.
+
+
+PowerShell commands used to verify this file:   Get-Process | Where-Object {$_.MainModule.FileName} | ForEach-Object {
+    Get-AuthenticodeSignature $_.MainModule.FileName -ErrorAction SilentlyContinue
+} | Where-Object {$_.Status -ne "Valid"} | Select-Object Status, Path | Unique, Get-Authenitcodesignature, Get-Process blnsvr | Select-Object -property Path
