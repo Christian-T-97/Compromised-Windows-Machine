@@ -7,7 +7,9 @@ This project documents a hands-on investigation of a Windows 11 virtual machine 
 
 The objective was to establish a baseline of the system, examine key areas of activity, and practice identifying and investigating potentially suspicious indicators.
 
-A controlled test scenario will be used to explore how system changes can be reflected in Windows event logs.
+A controlled test account was also used to explore how system changes may appear in Windows event logs.
+
+Scope: This was a baseline investigation and controlled lab exercise, not a confirmed malware infection or security incident.
 
 ## Objectives
 
